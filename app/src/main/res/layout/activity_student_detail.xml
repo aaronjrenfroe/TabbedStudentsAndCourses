@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="top|left"
     android:orientation="vertical"
-    tools:context="edu.calbaptist.cs.egr423.mydatabase.DetailActivityStudent">
+    tools:context="edu.calbaptist.cs.egr423.mydatabase.DetailStudentActivity">
 
     <TextView
         android:id="@+id/nameText"

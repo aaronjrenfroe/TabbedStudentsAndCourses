@@ -142,24 +142,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Course getCourseById(long id){
-        Cursor cursor = database.rawQuery("select * from COURSES",null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
+        Cursor cursor = database.rawQuery("select * from COURSES where id = \"" + id + "\"",null);
 
-            Course course = new Course();
+        Course course = null;
+
+        if(cursor.getCount() > 0){
+            cursor.moveToFirst();
+            course = new Course();
             course.setId(cursor.getLong(0));
             course.setName(cursor.getString(1));
             course.setCourseCode(cursor.getString(2));
             course.setUnits(cursor.getInt(3));
 
-            if(course.getId() == id) {
-                cursor.close();
-                return course;
-            }
-            cursor.moveToNext();
         }
         cursor.close();
-        return null;
+        return course;
     }
 
     @Override

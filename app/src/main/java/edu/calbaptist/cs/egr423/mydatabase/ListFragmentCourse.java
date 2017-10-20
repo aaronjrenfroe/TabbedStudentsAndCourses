@@ -43,7 +43,7 @@ public class ListFragmentCourse extends ListFragment {
     private void showDetail(long id){
         // Passing courses the ID instead of the course's information because
         // these functions do not need to know what fields course contains
-        Intent intent = DetailActivityCourse.getIntent(getActivity(), id);
+        Intent intent = DetailCourseActivity.getIntent(getActivity(), id);
         startActivity(intent);
     }
 

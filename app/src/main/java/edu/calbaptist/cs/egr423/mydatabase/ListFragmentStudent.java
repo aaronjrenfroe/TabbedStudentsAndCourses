@@ -43,7 +43,7 @@ public class ListFragmentStudent extends ListFragment {
         // Passing students the ID instead of the students information because
         // these functions do not need to know what fields student contains
 
-        Intent intent = DetailActivityStudent.getIntent(getActivity(), id);
+        Intent intent = DetailStudentActivity.getIntent(getActivity(), id);
         startActivity(intent);
     }
 
